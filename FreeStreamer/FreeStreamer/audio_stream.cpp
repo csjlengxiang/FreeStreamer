@@ -461,7 +461,7 @@ void Audio_Stream::seekToOffset(float offset)
 {
     const State currentState = this->state();
     
-    if (!(currentState == PLAYING || currentState == END_OF_FILE)) {
+    if (!(currentState == PLAYING || currentState == PAUSED || currentState == END_OF_FILE)) {
         // Do not allow seeking if we are not currently playing the stream
         // This allows a previous seek to be completed
         return;
